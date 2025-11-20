@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        #numb{
+             font-size: 100px;
+             align-items: center;
+             text-align: center;
+        }
+        button{
+            background-color: blue;
+            padding: 10px;
+            color: white;
+            border-radius: 10px;
+            width: 100px;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+        }
+        .mmm{
+            text-align: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="numb" > 0 </h1>
+<div class="mmm">
+<button id="inc">Increase</button> &nbsp &nbsp
+<button id="dec">Decrease</button>  &nbsp &nbsp
+<button id="reset">Reset</button>
+</div>
+    
+</body>
+<script>
+
+const number = document.getElementById("numb");
+let count = 0;
+document.addEventListener("DOMContentLoaded", () => {
+
+    document.getElementById("inc").onclick = () => {
+        count += 5;
+        number.textContent = count;
+    }
+    document.getElementById("dec").onclick = () => {
+        if(count != 0){
+            count -= 5;
+            number.textContent = count;
+        }else{
+            count = 0;
+            number.textContent = count;
+        }
+    }
+
+    document.getElementById("reset").onclick = () => {
+        count = 0;
+        number.textContent = count;
+    }
+});
+
+</script>
+</html>
